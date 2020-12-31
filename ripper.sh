@@ -73,10 +73,6 @@ do
     elif [[ $variant == "album" ]]; then
       album="$string"
       echo "Album = $string"
-    elif [[ $variant == "url" ]]; then
-      # Get the track number and download the coverart using an outside script
-      #tracknumber=$(`$script_dir/trackify.sh` "$string")
-      #echo "Track number = $tracknumber"
     fi
   fi
 done
