@@ -41,8 +41,8 @@ do
       vorbiscomment -a tmp.ogg -t "ARTIST=$artist" -t "ALBUM=$album"\
           -t "TITLE=$title" -t "tracknumber=$tracknumber"
       # Sanitize filenames
-      saveto="$musicdir/${artist//\/ /}/${album//\/ /}"
-      echo "Saved song $title by $artist to $saveto/${title//\/ /}.ogg"
+      saveto="$musicdir/${artist//\/ /}-${album//\/ /}"
+      echo "Saved song $title by $artist to $saveto-${title//\/ /}.ogg"
       if [[ ! -a $saveto ]]; then
         mkdir -p "$saveto"
       fi
@@ -75,8 +75,8 @@ do
       echo "Album = $string"
     elif [[ $variant == "url" ]]; then
       # Get the track number and download the coverart using an outside script
-      tracknumber=$(`$script_dir/trackify.sh` "$string")
-      echo "Track number = $tracknumber"
+      #tracknumber=$(`$script_dir/trackify.sh` "$string")
+      #echo "Track number = $tracknumber"
     fi
   fi
 done
